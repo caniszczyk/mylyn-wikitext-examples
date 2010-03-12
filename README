@@ -1,2 +1,4 @@
 An example that demonstrates crowdsourcing documentation from the Eclipsepedia wiki
      http://wiki.eclipse.org/DocumentationGuidelines/CrowdSourcingExample
+
+To generate the documentation, simply run the build-doc.xml Ant script.
