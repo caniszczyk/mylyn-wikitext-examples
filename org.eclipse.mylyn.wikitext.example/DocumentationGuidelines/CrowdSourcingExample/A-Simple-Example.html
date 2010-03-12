@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Crowdsourcing Example - A Simple Example</title>
+	</head>
+	<body>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<th style="width: 100%" align="center" colspan="3">A Simple Example</th>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="What-is-WikiText.html" title="What is WikiText">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right">
+					<a href="Other-Approaches.html" title="Other Approaches">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">What is WikiText</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Other Approaches</td>
+			</tr>
+		</table><hr/>
+		<h1 id="A_Simple_Example">A Simple Example</h1>
+		<p>The best way to learn is by doing. As an example, we will take this wiki entry and create some Eclipse help content from it. To accomplish this, we will use Ant so you can easily integrate this into a build if you wish.</p>
+		<h2 id="Setting_up_the_Classpath">Setting up the Classpath</h2>
+		<p>The first order of business is to setup your Ant classpath so you can use the WikiText Ant tasks.</p>
+		<p>You can 
+			<a href="http://www.eclipse.org/downloads/download.php?file=/tools/mylyn/update/weekly/mylyn-wikitext-standalone-latest.zip" target="doc_external">download</a> the WikiText SDK which contains the jars you'll need. In our case, we only need the org.eclipse.mylyn.wikitext.core_1.3.0.I20100116-0000-e3x.jar and org.eclipse.mylyn.wikitext.mediawiki.core_1.3.0.I20100116-0000-e3x.jar since we are only working with Mediawiki. If we were working with something like confluence, we would have to grab the respective JAR and put it on our classpath.
+		</p>
+		<p>In the end, your Ant file will look something like the snippet below.</p>
+		<pre style="width: 60em;">
+&lt;path id="wikitext.tasks.classpath"&gt;
+	&lt;fileset dir="lib"&gt;
+		&lt;include name="org.eclipse.mylyn.wikitext.*core*.jar"/&gt;
+	&lt;/fileset&gt;
+&lt;/path&gt;
+
+&lt;taskdef classpathref="wikitext.tasks.classpath" 
+ resource="org/eclipse/mylyn/internal/wikitext/mediawiki/core/tasks/tasks.properties"/&gt;
+&lt;taskdef classpathref="wikitext.tasks.classpath" 
+ resource="org/eclipse/mylyn/wikitext/core/util/anttask/tasks.properties"/&gt;
+</pre>
+		<h2 id="Converting_to_Eclipse_Help">Converting to Eclipse Help</h2>
+		<p>After we have setup the classpath for our task, we need to go and fetch the wiki content and convert it to Eclipse help. This is accomplished via the 
+			<b>mediawiki-to-eclipse-help Ant</b> task.
+		</p>
+		<p>In the end, your Ant file will look something like the snippet below.</p>
+		<pre style="width: 60em;">
+
+&lt;mediawiki-to-eclipse-help
+    	wikiBaseUrl="http://wiki.eclipse.org"
+		validate="true"
+		failonvalidationerror="true"
+		prependImagePrefix="images"
+		formatoutput="true"
+		defaultAbsoluteLinkTarget="doc_external"
+    	dest="${basedir}"
+    	title="Crowdsourcing Documentation"
+    	generateUnifiedToc="false"&gt;
+    	&lt;path name="DocumentationGuidelines/Example" 
+                title="Crowdsourcing Documentation" 
+                generateToc="true"/&gt;
+    	...
+</pre>
+		<p>When the Ant task is executed... TODO</p>
+		<h2 id="Source_Code">Source Code</h2>
+		<p>The full source code for this example is available on GitHub.</p><hr/>
+		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
+			<tr>
+				<td style="width: 20%" align="left">
+					<a href="What-is-WikiText.html" title="What is WikiText">
+						<img alt="Previous" border="0" src="../../images/prev.gif"/>
+					</a>
+				</td>
+				<td style="width: 60%" align="center">
+					<a href="CrowdSourcingExample.html" title="Crowdsourcing Example">
+						<img alt="Crowdsourcing Example" border="0" src="../../images/home.gif"/>
+					</a>
+				</td>
+				<td style="width: 20%" align="right">
+					<a href="Other-Approaches.html" title="Other Approaches">
+						<img alt="Next" border="0" src="../../images/next.gif"/>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%" align="left" valign="top">What is WikiText</td>
+				<td style="width: 60%" align="center"></td>
+				<td style="width: 20%" align="right" valign="top">Other Approaches</td>
+			</tr>
+		</table>
+	</body>
+</html>
