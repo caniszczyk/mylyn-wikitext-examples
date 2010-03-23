@@ -52,11 +52,10 @@
     	    		generateUnifiedToc="false">
     	    		<path name="DocumentationGuidelines/CrowdSourcingExample" title="Crowdsourcing Example" generateToc="true"/>
     	    		<pageAppendum>
+= Updating This Document =
 
-    	= Updating This Document =
-
-    	This document is maintained in a collaborative wiki.  If you wish to update or modify this document please visit 
-    	{url}
+This document is maintained in a collaborative wiki.  If you wish to update or modify this document please visit 
+{url}
     	  			</pageAppendum>
     	</mediawiki-to-eclipse-help>
     	
