@@ -37,7 +37,9 @@
 		</delete>
 	</target>
 
-    <target name="all" depends="init" description="An example to generate Eclipse help content from the wiki">
+	<target name="all" depends="generate-help, test"/>
+	
+    <target name="generate-help" depends="init" description="An example to generate Eclipse help content from the wiki">
     	<mediawiki-to-eclipse-help
     	    		wikiBaseUrl="${help.doc.url.base}"
     				validate="true"
@@ -57,6 +59,7 @@
     	{url}
     	  			</pageAppendum>
     	</mediawiki-to-eclipse-help>
+    	
     </target>
 
 	<target name="test" depends="init" description="verify that all of the HTML files are well-formed XML">
@@ -78,10 +81,8 @@ or inadvertently starting a line with a space character (in MediaWiki this start
 		-->
 		<echo file="tmp/__empty.dtd" message=""/>
 		<xmlvalidate lenient="true">
-			<fileset dir="userguide">
+			<fileset dir="${basedir}">
 				<include name="**/*.xml"/>
-			</fileset>
-			<fileset dir="userguide">
 				<include name="**/*.html"/>
 			</fileset>
 			<dtd publicid="-//W3C//DTD XHTML 1.0 Transitional//EN" location="${basedir}/tmp/__empty.dtd"/>
