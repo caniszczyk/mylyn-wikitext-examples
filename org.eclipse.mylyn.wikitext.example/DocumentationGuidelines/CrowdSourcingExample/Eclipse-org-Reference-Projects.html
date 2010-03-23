@@ -33,17 +33,29 @@
 		<h2 id="Mylyn">Mylyn</h2>
 		<p>The Mylyn project uses two wiki pages on Eclipsepedia for its documentation: 
 			<a href="http://wiki.eclipse.org/Mylyn/User_Guide" title="Mylyn/User Guide" target="doc_external">Mylyn/User Guide</a> and 
-			<a href="http://wiki.eclipse.org/Mylyn/FAQ" title="Mylyn/FAQ" target="doc_external">Mylyn/FAQ</a>.  Each of these have their own Help table of contents, which are arranged into a common document via a top-level table of contents with links.
+			<a href="http://wiki.eclipse.org/Mylyn/FAQ" title="Mylyn/FAQ" target="doc_external">Mylyn/FAQ</a>.
 		</p>
+		<p>Each of these have their own Help table of contents, which are arranged into a common document via a top-level table of contents with links.</p>
 		<p>You can browse the source code 
 			<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.mylyn/org.eclipse.mylyn.help.ui/?root=Tools_Project" target="doc_external">here</a>. Pay attention to 
 			<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.mylyn/org.eclipse.mylyn.help.ui/build-helper.xml?root=Tools_Project&amp;view=markup" target="doc_external">build-helper.xml</a>, which drives the generation tasks, and 
 			<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.mylyn/org.eclipse.mylyn.help.ui/toc.xml?root=Tools_Project&amp;view=markup" target="doc_external">toc.xml</a>, which links the generated table of contents into a single document.
 		</p>
 		<h2 id="EGit">EGit</h2>
-		<p>The EGit project uses a single wiki page on Eclipsepedia for its documentation. </p>
+		<p>The EGit project uses a single wiki page on Eclipsepedia for its 
+			<a href="http://wiki.eclipse.org/EGit/User_Guide" target="doc_external">documentation</a>.
+		</p>
+		<p>Check out the 
+			<b>org.eclipse.egit.doc</b> plug-in.
+		</p>
 		<h2 id="Xtext">Xtext</h2>
-		<p>The Xtext project uses a Textile and Wikitext for its documentation. This is different from what we desc</p><hr/>
+		<p>The Xtext project uses a Textile and Wikitext for its documentation. The code is available in the 
+			<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.tmf/org.eclipse.xtext/plugins/org.eclipse.xtext.doc/?root=Modeling_Project" target="doc_external">org.eclipse.xtext.doc</a> plug-in. The documentation is sourced from various Textile files stored in source control and then transformed at build-time. This is different from the previous two examples which used the wiki as the source of documentation.
+		</p>
+		<p>Pay attention to the 
+			<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.tmf/org.eclipse.xtext/plugins/org.eclipse.xtext.doc/customBuild.xml?root=Modeling_Project&amp;view=markup" target="doc_external">customBuild.xml</a> and the 
+			<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.tmf/org.eclipse.xtext/plugins/org.eclipse.xtext.doc/doc/?root=Modeling_Project" target="doc_external">doc</a> folder.
+		</p><hr/>
 		<table class="navigation" style="width: 100%;" border="0" summary="navigation">
 			<tr>
 				<td style="width: 20%" align="left">
